@@ -47,7 +47,7 @@ def draw_save_image(file_name):
     """draw and save a picture from the given dataset of dots'
     coordinates placed int the file"""
     x_arr, y_arr = coordinates(file_name)
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(9.6, 5.4))
     ax.scatter(x_arr, y_arr, color='black')
     ax.axis('off')
     plt.savefig('image.png')
