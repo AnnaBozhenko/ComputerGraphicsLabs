@@ -42,16 +42,6 @@ def coordinates(file_name):
     return points_arr
 
 
-def max_i(points_arr, ind):
-    """points_arr - list of lists (length of lists are equal and is greater than ind),
-    returns index of list in points_arr, that has the greatest value by ind's index"""
-    max_i_coord = 0
-    for i in range(len(points_arr)):
-        if points_arr[ind] > max_i_coord:
-            max_i_coord = points_arr[ind]
-    return max_i_coord
-
-
 def save_and_show(points_arr, file_to_save_as, width_in_pixels, height_in_pixels):
     """points_arr - list of lists, where lists are points' coordinates in Cartesian system;
     file_to_save_as - string; width_in_pixels, height_in_pixels - numbers"""
@@ -60,9 +50,9 @@ def save_and_show(points_arr, file_to_save_as, width_in_pixels, height_in_pixels
     dpi = 100
     width_in_pixels /= dpi
     height_in_pixels /= dpi
-    fig, (ax) = plt.subplots(figsize=(width_in_pixels, height_in_pixels), dpi=100)
-    ax.scatter(x_coords, y_coords, color="blue")
-    ax.axis('off')
+    plt.subplots(figsize=(width_in_pixels, height_in_pixels), dpi=100)
+    plt.scatter(x_coords, y_coords, color="blue")
+    plt.axis('off')
     plt.savefig(file_to_save_as)
     plt.show()
     plt.close()
