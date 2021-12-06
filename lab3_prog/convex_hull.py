@@ -179,8 +179,6 @@ def save_only_hull(points_arr, points_indices_arr, name_of_file_to_create, width
     dpi = 100
     width_in_pixels /= dpi
     heigth_in_pixels /= dpi
-    plt.xlim([0, max_i(x_coords, 0) + 100])
-    plt.ylim([0, max_i(y_coords, 1) + 100])
     plt.figure(figsize=(width_in_pixels, heigth_in_pixels), dpi=100)
     plt.plot(x_coords, y_coords, color="blue")
     plt.axis('off')
@@ -209,8 +207,6 @@ def save_hull_and_inner(points_arr, points_indices_arr, name_of_file_to_create, 
     dpi = 100
     width_in_pixels /= dpi
     heigth_in_pixels /= dpi
-    plt.xlim([0, max_i(hull_points_x, 0) + 100])
-    plt.ylim([0, max_i(hull_points_y, 1) + 100])
     plt.figure(figsize=(width_in_pixels, heigth_in_pixels), dpi=100)
     # draw the convex_hull figure
     plt.plot(hull_points_x, hull_points_y, color="black")
